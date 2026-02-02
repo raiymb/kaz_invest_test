@@ -1,32 +1,73 @@
 export const translations = {
-  en: {
-    greeting: "Hi there!",
-    prompt: "What would you like to know?",
-    subtext: "Use one of the most common prompts below or ask your own question to get started.",
-    placeholder: "Ask whatever you want",
-    voiceError: "Voice recognition not supported or permission denied.",
-    error: "Sorry, something went wrong. Please try again."
-  },
-  ru: {
-    greeting: "Привет!",
-    prompt: "Что бы вы хотели узнать?",
-    subtext: "Используйте один из популярных запросов ниже или задайте свой вопрос.",
-    placeholder: "Спросите что угодно",
-    voiceError: "Голосовой ввод не поддерживается или нет доступа.",
-    error: "Извините, что-то пошло не так. Попробуйте снова."
-  },
-  kk: {
-    greeting: "Сәлем!",
-    prompt: "Не білгіңіз келеді?",
-    subtext: "Төмендегі танымал сұраулардың бірін таңдаңыз немесе өз сұрағыңызды қойыңыз.",
-    placeholder: "Кез келген нәрсені сұраңыз",
-    voiceError: "Дауыспен енгізуге қолдау жоқ немесе рұқсат берілмеген.",
-    error: "Кешіріңіз, қате кетті. Қайта көріңіз."
-  }
-};
+	en: {
+		greeting: 'Hello!',
+		prompt: 'How can I help you today?',
+		subtext:
+			'Choose a quick action below or type your own question to get started.',
+		placeholder: 'Type your message...',
+		voiceError: 'Voice recognition not supported or permission denied.',
+		error: 'Sorry, something went wrong. Please try again.',
+		history: 'Chat History',
+		newChat: 'New Chat',
+		noHistory: 'No conversations yet',
+		startChat: 'Start a new chat to begin',
+		listening: 'Listening...',
+		send: 'Send message',
+		stopListening: 'Stop listening',
+		startListening: 'Start voice input',
+		helperText: 'Or type your message below',
+		quickExplain: 'Explain a concept',
+		quickCode: 'Write code',
+		quickSummarize: 'Help with writing',
+		quickIdeas: 'Brainstorm ideas',
+	},
+	ru: {
+		greeting: 'Привет!',
+		prompt: 'Чем я могу помочь?',
+		subtext: 'Выберите быстрое действие ниже или введите свой вопрос.',
+		placeholder: 'Введите сообщение...',
+		voiceError: 'Голосовой ввод не поддерживается или нет доступа.',
+		error: 'Извините, что-то пошло не так. Попробуйте снова.',
+		history: 'История чатов',
+		newChat: 'Новый чат',
+		noHistory: 'Пока нет разговоров',
+		startChat: 'Начните новый чат',
+		listening: 'Слушаю...',
+		send: 'Отправить',
+		stopListening: 'Остановить запись',
+		startListening: 'Голосовой ввод',
+		helperText: 'Или введите сообщение ниже',
+		quickExplain: 'Объяснить понятие',
+		quickCode: 'Написать код',
+		quickSummarize: 'Помощь с текстом',
+		quickIdeas: 'Генерация идей',
+	},
+	kk: {
+		greeting: 'Сәлем!',
+		prompt: 'Бүгін сізге қалай көмектесе аламын?',
+		subtext:
+			'Төмендегі жылдам әрекетті таңдаңыз немесе өз сұрағыңызды жазыңыз.',
+		placeholder: 'Хабарламаңызды жазыңыз...',
+		voiceError: 'Дауыспен енгізуге қолдау жоқ немесе рұқсат берілмеген.',
+		error: 'Кешіріңіз, қате кетті. Қайта көріңіз.',
+		history: 'Чат тарихы',
+		newChat: 'Жаңа чат',
+		noHistory: 'Әңгімелер жоқ',
+		startChat: 'Жаңа чат бастаңыз',
+		listening: 'Тыңдап жатырмын...',
+		send: 'Жіберу',
+		stopListening: 'Жазуды тоқтату',
+		startListening: 'Дауыспен енгізу',
+		helperText: 'Немесе төменде хабарлама жазыңыз',
+		quickExplain: 'Түсініктеме беру',
+		quickCode: 'Код жазу',
+		quickSummarize: 'Мәтін көмегі',
+		quickIdeas: 'Идея генерациясы',
+	},
+}
 
 export const languageOptions = [
-  { code: 'en', label: 'English', voice: 'en-US' },
-  { code: 'ru', label: 'Русский', voice: 'ru-RU' },
-  { code: 'kk', label: 'Қазақша', voice: 'kk-KZ' } // Kazakh voice support might vary by browser
-];
+	{ code: 'en', label: 'English', voice: 'en-US' },
+	{ code: 'ru', label: 'Русский', voice: 'ru-RU' },
+	{ code: 'kk', label: 'Қазақша', voice: 'kk-KZ' },
+]

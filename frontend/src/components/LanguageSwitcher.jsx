@@ -1,32 +1,53 @@
-import { Globe } from 'lucide-react';
+import { Globe } from 'lucide-react'
+import { memo, useCallback } from 'react'
 
-const LanguageSwitcher = ({ currentLang, setLang, exclude = [], inHeader = false }) => {
-  const languages = [
-    { code: 'en', label: 'EN' },
-    { code: 'ru', label: 'RU' },
-    { code: 'kk', label: 'KZ' },
-  ].filter(l => !exclude.includes(l.code));
+const languages = [
+	{ code: 'en', label: 'EN', fullName: 'English' },
+	{ code: 'ru', label: 'RU', fullName: 'Русский' },
+	{ code: 'kk', label: 'KZ', fullName: 'Қазақша' },
+]
 
-  return (
-    <div className={`${inHeader ? 'flex' : 'absolute top-4 right-4'} items-center bg-white/10 backdrop-blur-md rounded-full p-1 border border-white/10`}>
-      <div className="p-2 text-blue-200">
-        <Globe size={18} />
-      </div>
-      {languages.map((lang) => (
-        <button
-          key={lang.code}
-          onClick={() => setLang(lang.code)}
-          className={`px-3 py-1ounded-full text-sm font-medium transition-all rounded-full ${
-            currentLang === lang.code
-              ? 'bg-blue-600 text-white shadow-md'
-              : 'text-blue-100 hover:bg-white/5'
-          }`}
-        >
-          {lang.label}
-        </button>
-      ))}
-    </div>
-  );
-};
+const LanguageSwitcher = memo(({ currentLang, setLang, exclude = [] }) => {
+	const availableLanguages = languages.filter(l => !exclude.includes(l.code))
 
-export default LanguageSwitcher;
+	const handleLangChange = useCallback(
+		code => {
+			setLang(code)
+		},
+		[setLang],
+	)
+
+	return (
+		<div
+			className='flex items-center glass rounded-xl p-1'
+			role='group'
+			aria-label='Language selection'
+		>
+			<div className='p-2 text-blue-300'>
+				<Globe size={16} />
+			</div>
+			{availableLanguages.map(lang => (
+				<button
+					key={lang.code}
+					onClick={() => handleLangChange(lang.code)}
+					className={`
+            px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200
+            ${
+							currentLang === lang.code
+								? 'bg-blue-500 text-white shadow-md shadow-blue-500/30'
+								: 'text-gray-300 hover:text-white hover:bg-white/10'
+						}
+          `}
+					aria-label={lang.fullName}
+					aria-pressed={currentLang === lang.code}
+				>
+					{lang.label}
+				</button>
+			))}
+		</div>
+	)
+})
+
+LanguageSwitcher.displayName = 'LanguageSwitcher'
+
+export default LanguageSwitcher
